@@ -1,0 +1,231 @@
+\hypertarget{io__png_8c}{}\section{src/io\+\_\+png/io\+\_\+png.c File Reference}
+\label{io__png_8c}\index{src/io\+\_\+png/io\+\_\+png.\+c@{src/io\+\_\+png/io\+\_\+png.\+c}}
+
+
+P\+NG read/write simplified interface.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$png.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}io\+\_\+png.\+h\char`\"{}}\newline
+Include dependency graph for io\+\_\+png.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{io__png_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{io__png_8c_ac4b295661ab2809e1211068b43935fff}\label{io__png_8c_ac4b295661ab2809e1211068b43935fff}} 
+\#define {\bfseries P\+N\+G\+\_\+\+S\+I\+G\+\_\+\+L\+EN}~4
+\item 
+\mbox{\Hypertarget{io__png_8c_a59020db16c4fc483180176609389e9ed}\label{io__png_8c_a59020db16c4fc483180176609389e9ed}} 
+\#define {\bfseries I\+O\+\_\+\+P\+N\+G\+\_\+\+U8}~0x0001       /$\ast$  8bit unsigned integer $\ast$/
+\item 
+\mbox{\Hypertarget{io__png_8c_a8b93533ae0ea6561472759cf6cbc85c0}\label{io__png_8c_a8b93533ae0ea6561472759cf6cbc85c0}} 
+\#define {\bfseries I\+O\+\_\+\+P\+N\+G\+\_\+\+F32}~0x0002       /$\ast$ 32bit float $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{io__png_8c_a012b75e68d0be39dee836a3fe4ac922c}{io\+\_\+png\+\_\+info} (void)
+\begin{DoxyCompactList}\small\item\em helps tracking versions, via the string tag inserted into the library \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{io__png_8c_a54ce4037b9759d9a8f31c01d3315821d}{io\+\_\+png\+\_\+read\+\_\+u8} (const char $\ast$fname, size\+\_\+t $\ast$nxp, size\+\_\+t $\ast$nyp, size\+\_\+t $\ast$ncp)
+\begin{DoxyCompactList}\small\item\em read a P\+NG file into a 8bit integer array \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{io__png_8c_a75d4fa6df922812971d69be6d2d8c35c}{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb} (const char $\ast$fname, size\+\_\+t $\ast$nxp, size\+\_\+t $\ast$nyp)
+\begin{DoxyCompactList}\small\item\em read a P\+NG file into a 8bit integer array, converted to R\+GB \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{io__png_8c_acbe290d3529e65fdd55fd131af4713e1}{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray} (const char $\ast$fname, size\+\_\+t $\ast$nxp, size\+\_\+t $\ast$nyp)
+\begin{DoxyCompactList}\small\item\em read a P\+NG file into a 8bit integer array, converted to gray \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{io__png_8c_a262d986069f1b45053769f3a5659ba10}{io\+\_\+png\+\_\+read\+\_\+f32} (const char $\ast$fname, size\+\_\+t $\ast$nxp, size\+\_\+t $\ast$nyp, size\+\_\+t $\ast$ncp)
+\begin{DoxyCompactList}\small\item\em read a P\+NG file into a 32bit float array \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{io__png_8c_add2a6ef684e3a42aab4f9735d16d03e8}{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb} (const char $\ast$fname, size\+\_\+t $\ast$nxp, size\+\_\+t $\ast$nyp)
+\begin{DoxyCompactList}\small\item\em read a P\+NG file into a 32bit float array, converted to R\+GB \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{io__png_8c_a7b26dc88b7f194d4d46a0599e83cafd3}{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray} (const char $\ast$fname, size\+\_\+t $\ast$nxp, size\+\_\+t $\ast$nyp)
+\begin{DoxyCompactList}\small\item\em read a P\+NG file into a 32bit float array, converted to gray \end{DoxyCompactList}\item 
+int \hyperlink{io__png_8c_accb143f7e473c3c10659010bf85a7457}{io\+\_\+png\+\_\+write\+\_\+u8} (const char $\ast$fname, const unsigned char $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nc)
+\begin{DoxyCompactList}\small\item\em write a 8bit unsigned integer array into a P\+NG file \end{DoxyCompactList}\item 
+int \hyperlink{io__png_8c_a8b49182e70dfd843d7bafbc7a5278172}{io\+\_\+png\+\_\+write\+\_\+f32} (const char $\ast$fname, const float $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nc)
+\begin{DoxyCompactList}\small\item\em write a float array into a P\+NG file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+NG read/write simplified interface. 
+
+This is a front-\/end to libpng, with routines to\+: \begin{DoxyItemize}
+\item read a P\+NG file as a deinterlaced 8bit integer or float array \item write a 8bit integer or float array to a P\+NG file\end{DoxyItemize}
+Multi-\/channel images are handled\+: grey, grey+alpha, rgb and rgb+alpha, as well as on-\/the-\/fly color model conversion.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]handle lossless 16bit data 
+
+add a test suite 
+
+internally handle R\+G\+B/gray conversion in io\+\_\+png\+\_\+read\+\_\+raw() 
+
+handle deinterlacing as a libpng transform function\end{DoxyRefDesc}
+
+
+\begin{DoxyAuthor}{Author}
+Nicolas Limare \href{mailto:nicolas.limare@cmla.ens-cachan.fr}{\tt nicolas.\+limare@cmla.\+ens-\/cachan.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{io__png_8c_a012b75e68d0be39dee836a3fe4ac922c}\label{io__png_8c_a012b75e68d0be39dee836a3fe4ac922c}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+info@{io\+\_\+png\+\_\+info}}
+\index{io\+\_\+png\+\_\+info@{io\+\_\+png\+\_\+info}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+info()}{io\_png\_info()}}
+{\footnotesize\ttfamily char$\ast$ io\+\_\+png\+\_\+info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+helps tracking versions, via the string tag inserted into the library 
+
+This function is not expected to be used in real-\/world programs.
+
+\begin{DoxyReturn}{Returns}
+a pointer to a version info string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io__png_8c_a262d986069f1b45053769f3a5659ba10}\label{io__png_8c_a262d986069f1b45053769f3a5659ba10}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+read\+\_\+f32@{io\+\_\+png\+\_\+read\+\_\+f32}}
+\index{io\+\_\+png\+\_\+read\+\_\+f32@{io\+\_\+png\+\_\+read\+\_\+f32}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+read\+\_\+f32()}{io\_png\_read\_f32()}}
+{\footnotesize\ttfamily float$\ast$ io\+\_\+png\+\_\+read\+\_\+f32 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{size\+\_\+t $\ast$}]{nxp,  }\item[{size\+\_\+t $\ast$}]{nyp,  }\item[{size\+\_\+t $\ast$}]{ncp }\end{DoxyParamCaption})}
+
+
+
+read a P\+NG file into a 32bit float array 
+
+The array contains the deinterlaced channels. 1, 2, 4 and 8bit images are converted to float values between 0. and 1., 3., 15. or 255. 16bit images are also downscaled to 8bit before conversion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & P\+NG file name \\
+\hline
+{\em nxp,nyp,ncp} & pointers to variables to be filled with the number of columns, lines and channels of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to an allocated unsigned char array of pixels, or N\+U\+LL if an error happens 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io__png_8c_a7b26dc88b7f194d4d46a0599e83cafd3}\label{io__png_8c_a7b26dc88b7f194d4d46a0599e83cafd3}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray@{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray}}
+\index{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray@{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray()}{io\_png\_read\_f32\_gray()}}
+{\footnotesize\ttfamily float$\ast$ io\+\_\+png\+\_\+read\+\_\+f32\+\_\+gray (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{size\+\_\+t $\ast$}]{nxp,  }\item[{size\+\_\+t $\ast$}]{nyp }\end{DoxyParamCaption})}
+
+
+
+read a P\+NG file into a 32bit float array, converted to gray 
+
+See \hyperlink{io__png_8c_a262d986069f1b45053769f3a5659ba10}{io\+\_\+png\+\_\+read\+\_\+f32()} for details. \mbox{\Hypertarget{io__png_8c_add2a6ef684e3a42aab4f9735d16d03e8}\label{io__png_8c_add2a6ef684e3a42aab4f9735d16d03e8}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb@{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb}}
+\index{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb@{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb()}{io\_png\_read\_f32\_rgb()}}
+{\footnotesize\ttfamily float$\ast$ io\+\_\+png\+\_\+read\+\_\+f32\+\_\+rgb (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{size\+\_\+t $\ast$}]{nxp,  }\item[{size\+\_\+t $\ast$}]{nyp }\end{DoxyParamCaption})}
+
+
+
+read a P\+NG file into a 32bit float array, converted to R\+GB 
+
+See \hyperlink{io__png_8c_a262d986069f1b45053769f3a5659ba10}{io\+\_\+png\+\_\+read\+\_\+f32()} for details. \mbox{\Hypertarget{io__png_8c_a54ce4037b9759d9a8f31c01d3315821d}\label{io__png_8c_a54ce4037b9759d9a8f31c01d3315821d}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+read\+\_\+u8@{io\+\_\+png\+\_\+read\+\_\+u8}}
+\index{io\+\_\+png\+\_\+read\+\_\+u8@{io\+\_\+png\+\_\+read\+\_\+u8}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+read\+\_\+u8()}{io\_png\_read\_u8()}}
+{\footnotesize\ttfamily unsigned char$\ast$ io\+\_\+png\+\_\+read\+\_\+u8 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{size\+\_\+t $\ast$}]{nxp,  }\item[{size\+\_\+t $\ast$}]{nyp,  }\item[{size\+\_\+t $\ast$}]{ncp }\end{DoxyParamCaption})}
+
+
+
+read a P\+NG file into a 8bit integer array 
+
+The array contains the deinterlaced channels. 1, 2 and 4bit images are converted to 8bit. 16bit images are previously downscaled to 8bit.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]don\textquotesingle{}t downscale 16bit images.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & P\+NG file name \\
+\hline
+{\em nxp,nyp,ncp} & pointers to variables to be filled with the number of columns, lines and channels of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to an allocated unsigned char array of pixels, or N\+U\+LL if an error happens 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io__png_8c_acbe290d3529e65fdd55fd131af4713e1}\label{io__png_8c_acbe290d3529e65fdd55fd131af4713e1}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray@{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray}}
+\index{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray@{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray()}{io\_png\_read\_u8\_gray()}}
+{\footnotesize\ttfamily unsigned char$\ast$ io\+\_\+png\+\_\+read\+\_\+u8\+\_\+gray (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{size\+\_\+t $\ast$}]{nxp,  }\item[{size\+\_\+t $\ast$}]{nyp }\end{DoxyParamCaption})}
+
+
+
+read a P\+NG file into a 8bit integer array, converted to gray 
+
+See \hyperlink{io__png_8c_a54ce4037b9759d9a8f31c01d3315821d}{io\+\_\+png\+\_\+read\+\_\+u8()} for details. \mbox{\Hypertarget{io__png_8c_a75d4fa6df922812971d69be6d2d8c35c}\label{io__png_8c_a75d4fa6df922812971d69be6d2d8c35c}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb@{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb}}
+\index{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb@{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb()}{io\_png\_read\_u8\_rgb()}}
+{\footnotesize\ttfamily unsigned char$\ast$ io\+\_\+png\+\_\+read\+\_\+u8\+\_\+rgb (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{size\+\_\+t $\ast$}]{nxp,  }\item[{size\+\_\+t $\ast$}]{nyp }\end{DoxyParamCaption})}
+
+
+
+read a P\+NG file into a 8bit integer array, converted to R\+GB 
+
+See \hyperlink{io__png_8c_a54ce4037b9759d9a8f31c01d3315821d}{io\+\_\+png\+\_\+read\+\_\+u8()} for details. \mbox{\Hypertarget{io__png_8c_a8b49182e70dfd843d7bafbc7a5278172}\label{io__png_8c_a8b49182e70dfd843d7bafbc7a5278172}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+write\+\_\+f32@{io\+\_\+png\+\_\+write\+\_\+f32}}
+\index{io\+\_\+png\+\_\+write\+\_\+f32@{io\+\_\+png\+\_\+write\+\_\+f32}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+write\+\_\+f32()}{io\_png\_write\_f32()}}
+{\footnotesize\ttfamily int io\+\_\+png\+\_\+write\+\_\+f32 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{const float $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nc }\end{DoxyParamCaption})}
+
+
+
+write a float array into a P\+NG file 
+
+The float values are rounded to 8bit integers, and bounded to \mbox{[}0, 255\mbox{]}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]handle 16bit images and flexible min/max\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & P\+NG file name \\
+\hline
+{\em data} & array to write \\
+\hline
+{\em nx,ny,nc} & number of columns, lines and channels of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything OK, -\/1 if an error occured 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io__png_8c_accb143f7e473c3c10659010bf85a7457}\label{io__png_8c_accb143f7e473c3c10659010bf85a7457}} 
+\index{io\+\_\+png.\+c@{io\+\_\+png.\+c}!io\+\_\+png\+\_\+write\+\_\+u8@{io\+\_\+png\+\_\+write\+\_\+u8}}
+\index{io\+\_\+png\+\_\+write\+\_\+u8@{io\+\_\+png\+\_\+write\+\_\+u8}!io\+\_\+png.\+c@{io\+\_\+png.\+c}}
+\subsubsection{\texorpdfstring{io\+\_\+png\+\_\+write\+\_\+u8()}{io\_png\_write\_u8()}}
+{\footnotesize\ttfamily int io\+\_\+png\+\_\+write\+\_\+u8 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{const unsigned char $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nc }\end{DoxyParamCaption})}
+
+
+
+write a 8bit unsigned integer array into a P\+NG file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & P\+NG file name \\
+\hline
+{\em data} & array to write \\
+\hline
+{\em nx,ny,nc} & number of columns, lines and channels of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything OK, -\/1 if an error occured 
+\end{DoxyReturn}

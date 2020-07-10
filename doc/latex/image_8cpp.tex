@@ -1,0 +1,332 @@
+\hypertarget{image_8cpp}{}\section{src/image/image.cpp File Reference}
+\label{image_8cpp}\index{src/image/image.\+cpp@{src/image/image.\+cpp}}
+
+
+Image helper functions.  
+
+
+{\ttfamily \#include \char`\"{}image.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for image.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{image_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uchar $\ast$ \hyperlink{image_8cpp_aaf269bff7c09327eea93a955e3680b8d}{Allocate\+Uchar\+Image} (int width, int height, int nchannel)
+\begin{DoxyCompactList}\small\item\em Allocate space for the uchar image,. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \hyperlink{image_8cpp_a1ed8d4f7fb14a60d16b27ae7fd8b1661}{Generate\+Labels} (size\+\_\+t width, size\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em Generate labels for clustering. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{image_8cpp_a9db41200e4b9be68cc2809d733920e8f}{Generate\+Random\+Numbers} (int count)
+\begin{DoxyCompactList}\small\item\em Function generate random numbers. \end{DoxyCompactList}\item 
+void \hyperlink{image_8cpp_aeb43573df64a948fbf767dfc5a9e6e10}{Label\+Image} (uchar $\ast$image, int width, int height, int $\ast$$\ast$labels, int reg\+Count)
+\begin{DoxyCompactList}\small\item\em Function Label\+Image in R\+GB colors. \end{DoxyCompactList}\item 
+void \hyperlink{image_8cpp_abd4d6fd513a32dd7c6cb87a9fd55ee93}{R\+G\+B2\+L\+UV} (float r, float g, float b, uchar $\ast$l, uchar $\ast$u, uchar $\ast$v)
+\begin{DoxyCompactList}\small\item\em Function R\+G\+B2\+L\+UV converts R\+GB pixel value to L\+UV pixel value. \end{DoxyCompactList}\item 
+void \hyperlink{image_8cpp_a098aa7f739868f62e83e20c4ea7dfb94}{L\+U\+V2\+R\+GB} (float L, float u, float v, uchar $\ast$R, uchar $\ast$G, uchar $\ast$B)
+\begin{DoxyCompactList}\small\item\em Function L\+U\+V2\+R\+GB converts L\+UV pixel value to R\+GB pixel value. \end{DoxyCompactList}\item 
+uchar $\ast$ \hyperlink{image_8cpp_a74f85606f0ad784c0874d52cfafe6271}{Convert\+R\+G\+B2\+L\+UV} (uchar $\ast$rgb, int width, int height, int nchannel)
+\begin{DoxyCompactList}\small\item\em Function Convert\+R\+G\+B2\+L\+UV convert R\+GB image to L\+UV. \end{DoxyCompactList}\item 
+uchar $\ast$ \hyperlink{image_8cpp_afdf912cf2077812604d3dd30fc710916}{Convert\+L\+U\+V2\+R\+GB} (uchar $\ast$luv, int width, int height, int nchannel)
+\begin{DoxyCompactList}\small\item\em Function Convert\+L\+U\+V2\+R\+GB converts input image image from L\+UV to R\+GB color space. \end{DoxyCompactList}\item 
+void \hyperlink{image_8cpp_a25a3c73d95a5704173780203d84b94e8}{Set\+Pixel} (uchar $\ast$im, int width, int height, int x, int y, const uchar val, int nchannel)
+\begin{DoxyCompactList}\small\item\em Set Pixel at channel component of image at postition given with x and y. \end{DoxyCompactList}\item 
+uchar \hyperlink{image_8cpp_a005dd5ff85d74e2f94923b041e31b7ae}{Get\+Pixel} (uchar $\ast$im, int width, int height, int x, int y, int nchannel)
+\begin{DoxyCompactList}\small\item\em Get Pixel at channel component of image at postition given with x and y. \end{DoxyCompactList}\item 
+int \hyperlink{image_8cpp_af2241f637be546f7ae009a81c983881b}{range\+\_\+distance} (uchar $\ast$image, int width, int height, int x1, int y1, int x2, int y2)
+\begin{DoxyCompactList}\small\item\em Function range\+\_\+distance calculate range distance between two pixels. \end{DoxyCompactList}\item 
+float \hyperlink{image_8cpp_a35a3486b3135e84e4251e314ecfb4ecd}{color\+\_\+distance} (const float $\ast$a, const float $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function color\+\_\+distance calculate color distance between the two vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Image helper functions. 
+
+\begin{DoxyAuthor}{Author}
+Damir Demirović \href{mailto:damir.demirovic@untz.ba}{\tt damir.\+demirovic@untz.\+ba} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{image_8cpp_aaf269bff7c09327eea93a955e3680b8d}\label{image_8cpp_aaf269bff7c09327eea93a955e3680b8d}} 
+\index{image.\+cpp@{image.\+cpp}!Allocate\+Uchar\+Image@{Allocate\+Uchar\+Image}}
+\index{Allocate\+Uchar\+Image@{Allocate\+Uchar\+Image}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Allocate\+Uchar\+Image()}{AllocateUcharImage()}}
+{\footnotesize\ttfamily uchar$\ast$ Allocate\+Uchar\+Image (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{nchannel }\end{DoxyParamCaption})}
+
+
+
+Allocate space for the uchar image,. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width,height} & and nchannel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+img -\/ allocated image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_a35a3486b3135e84e4251e314ecfb4ecd}\label{image_8cpp_a35a3486b3135e84e4251e314ecfb4ecd}} 
+\index{image.\+cpp@{image.\+cpp}!color\+\_\+distance@{color\+\_\+distance}}
+\index{color\+\_\+distance@{color\+\_\+distance}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{color\+\_\+distance()}{color\_distance()}}
+{\footnotesize\ttfamily float color\+\_\+distance (\begin{DoxyParamCaption}\item[{const float $\ast$}]{a,  }\item[{const float $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Function color\+\_\+distance calculate color distance between the two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a,b} & input images \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the color distance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_afdf912cf2077812604d3dd30fc710916}\label{image_8cpp_afdf912cf2077812604d3dd30fc710916}} 
+\index{image.\+cpp@{image.\+cpp}!Convert\+L\+U\+V2\+R\+GB@{Convert\+L\+U\+V2\+R\+GB}}
+\index{Convert\+L\+U\+V2\+R\+GB@{Convert\+L\+U\+V2\+R\+GB}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Convert\+L\+U\+V2\+R\+G\+B()}{ConvertLUV2RGB()}}
+{\footnotesize\ttfamily uchar$\ast$ Convert\+L\+U\+V2\+R\+GB (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{luv,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{nchannel }\end{DoxyParamCaption})}
+
+
+
+Function Convert\+L\+U\+V2\+R\+GB converts input image image from L\+UV to R\+GB color space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em luv} & L\+UV image to convert \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em nchannel} & number of image channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The input character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_a74f85606f0ad784c0874d52cfafe6271}\label{image_8cpp_a74f85606f0ad784c0874d52cfafe6271}} 
+\index{image.\+cpp@{image.\+cpp}!Convert\+R\+G\+B2\+L\+UV@{Convert\+R\+G\+B2\+L\+UV}}
+\index{Convert\+R\+G\+B2\+L\+UV@{Convert\+R\+G\+B2\+L\+UV}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Convert\+R\+G\+B2\+L\+U\+V()}{ConvertRGB2LUV()}}
+{\footnotesize\ttfamily uchar$\ast$ Convert\+R\+G\+B2\+L\+UV (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{rgb,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{nchannel }\end{DoxyParamCaption})}
+
+
+
+Function Convert\+R\+G\+B2\+L\+UV convert R\+GB image to L\+UV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & R\+GB image to convert \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em nchannel} & number of image channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+luv the converted image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_a1ed8d4f7fb14a60d16b27ae7fd8b1661}\label{image_8cpp_a1ed8d4f7fb14a60d16b27ae7fd8b1661}} 
+\index{image.\+cpp@{image.\+cpp}!Generate\+Labels@{Generate\+Labels}}
+\index{Generate\+Labels@{Generate\+Labels}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Generate\+Labels()}{GenerateLabels()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Generate\+Labels (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{width,  }\item[{size\+\_\+t}]{height }\end{DoxyParamCaption})}
+
+
+
+Generate labels for clustering. 
+
+Function generate labels. 
+\begin{DoxyParams}{Parameters}
+{\em width,height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+labels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_a9db41200e4b9be68cc2809d733920e8f}\label{image_8cpp_a9db41200e4b9be68cc2809d733920e8f}} 
+\index{image.\+cpp@{image.\+cpp}!Generate\+Random\+Numbers@{Generate\+Random\+Numbers}}
+\index{Generate\+Random\+Numbers@{Generate\+Random\+Numbers}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Generate\+Random\+Numbers()}{GenerateRandomNumbers()}}
+{\footnotesize\ttfamily vector$<$int$>$ Generate\+Random\+Numbers (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Function generate random numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & -\/ Count of numbers to be generated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number as vector$<$int$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_a005dd5ff85d74e2f94923b041e31b7ae}\label{image_8cpp_a005dd5ff85d74e2f94923b041e31b7ae}} 
+\index{image.\+cpp@{image.\+cpp}!Get\+Pixel@{Get\+Pixel}}
+\index{Get\+Pixel@{Get\+Pixel}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Get\+Pixel()}{GetPixel()}}
+{\footnotesize\ttfamily uchar Get\+Pixel (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{im,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{nchannel }\end{DoxyParamCaption})}
+
+
+
+Get Pixel at channel component of image at postition given with x and y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & image to convert \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em x} & x position in the image 0 $<$ x $<$ width \\
+\hline
+{\em y} & y position in the image 0 $<$ y $<$ height \\
+\hline
+{\em nchannel} & number of image channels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pixel value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_aeb43573df64a948fbf767dfc5a9e6e10}\label{image_8cpp_aeb43573df64a948fbf767dfc5a9e6e10}} 
+\index{image.\+cpp@{image.\+cpp}!Label\+Image@{Label\+Image}}
+\index{Label\+Image@{Label\+Image}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Label\+Image()}{LabelImage()}}
+{\footnotesize\ttfamily void Label\+Image (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{image,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int $\ast$$\ast$}]{labels,  }\item[{int}]{reg\+Count }\end{DoxyParamCaption})}
+
+
+
+Function Label\+Image in R\+GB colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & image to be labeled \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & heighto of the image \\
+\hline
+{\em labels} & color labels \\
+\hline
+{\em reg\+Count} & regions to be labeled \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{image_8cpp_a098aa7f739868f62e83e20c4ea7dfb94}\label{image_8cpp_a098aa7f739868f62e83e20c4ea7dfb94}} 
+\index{image.\+cpp@{image.\+cpp}!L\+U\+V2\+R\+GB@{L\+U\+V2\+R\+GB}}
+\index{L\+U\+V2\+R\+GB@{L\+U\+V2\+R\+GB}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{L\+U\+V2\+R\+G\+B()}{LUV2RGB()}}
+{\footnotesize\ttfamily void L\+U\+V2\+R\+GB (\begin{DoxyParamCaption}\item[{float}]{L,  }\item[{float}]{u,  }\item[{float}]{v,  }\item[{uchar $\ast$}]{R,  }\item[{uchar $\ast$}]{G,  }\item[{uchar $\ast$}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function L\+U\+V2\+R\+GB converts L\+UV pixel value to R\+GB pixel value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em L} & component of input image \\
+\hline
+{\em u} & component of input image \\
+\hline
+{\em v} & component of input image \\
+\hline
+{\em r} & component of output image \\
+\hline
+{\em g} & component of output image \\
+\hline
+{\em b} & component of output image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{image_8cpp_af2241f637be546f7ae009a81c983881b}\label{image_8cpp_af2241f637be546f7ae009a81c983881b}} 
+\index{image.\+cpp@{image.\+cpp}!range\+\_\+distance@{range\+\_\+distance}}
+\index{range\+\_\+distance@{range\+\_\+distance}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{range\+\_\+distance()}{range\_distance()}}
+{\footnotesize\ttfamily int range\+\_\+distance (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{image,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2 }\end{DoxyParamCaption})}
+
+
+
+Function range\+\_\+distance calculate range distance between two pixels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & image to calculate \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em x1} & first x position in the image \\
+\hline
+{\em y1} & first y position in the image \\
+\hline
+{\em x2} & second x position in the image \\
+\hline
+{\em y2} & second y position in the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+squared sum of distances 
+\end{DoxyReturn}
+\mbox{\Hypertarget{image_8cpp_abd4d6fd513a32dd7c6cb87a9fd55ee93}\label{image_8cpp_abd4d6fd513a32dd7c6cb87a9fd55ee93}} 
+\index{image.\+cpp@{image.\+cpp}!R\+G\+B2\+L\+UV@{R\+G\+B2\+L\+UV}}
+\index{R\+G\+B2\+L\+UV@{R\+G\+B2\+L\+UV}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+L\+U\+V()}{RGB2LUV()}}
+{\footnotesize\ttfamily void R\+G\+B2\+L\+UV (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{uchar $\ast$}]{l,  }\item[{uchar $\ast$}]{u,  }\item[{uchar $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function R\+G\+B2\+L\+UV converts R\+GB pixel value to L\+UV pixel value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & component of input image \\
+\hline
+{\em g} & component of input image \\
+\hline
+{\em b} & component of input image \\
+\hline
+{\em l} & component of output image \\
+\hline
+{\em u} & component of output image \\
+\hline
+{\em v} & component of output image 0$<$=l$<$=100, −134$<$=u$<$=220, −140$<$=v$<$=122 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{image_8cpp_a25a3c73d95a5704173780203d84b94e8}\label{image_8cpp_a25a3c73d95a5704173780203d84b94e8}} 
+\index{image.\+cpp@{image.\+cpp}!Set\+Pixel@{Set\+Pixel}}
+\index{Set\+Pixel@{Set\+Pixel}!image.\+cpp@{image.\+cpp}}
+\subsubsection{\texorpdfstring{Set\+Pixel()}{SetPixel()}}
+{\footnotesize\ttfamily void Set\+Pixel (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{im,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const uchar}]{val,  }\item[{int}]{nchannel }\end{DoxyParamCaption})}
+
+
+
+Set Pixel at channel component of image at postition given with x and y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & image to convert \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em x} & x position in the image \\
+\hline
+{\em y} & y position in the image \\
+\hline
+{\em val} & value to set at pixel location \\
+\hline
+{\em nchannel} & number of image channels \\
+\hline
+\end{DoxyParams}

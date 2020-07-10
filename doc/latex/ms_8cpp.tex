@@ -1,0 +1,182 @@
+\hypertarget{ms_8cpp}{}\section{src/ms/ms.cpp File Reference}
+\label{ms_8cpp}\index{src/ms/ms.\+cpp@{src/ms/ms.\+cpp}}
+
+
+Functions for Meanshift algorithm.  
+
+
+{\ttfamily \#include \char`\"{}ms.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include \char`\"{}../ra/\+Transitive\+Closure.\+h\char`\"{}}\newline
+Include dependency graph for ms.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ms_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ms_8cpp_a1236189e7ed18bfff1ec1abc02de7737}{Add\+To\+Stack} (std\+::stack$<$ \hyperlink{structMSPoint}{M\+S\+Point} $>$ \&stack, int i, int j)
+\begin{DoxyCompactList}\small\item\em Function Add\+To\+Stack add point to the stack. \end{DoxyCompactList}\item 
+uchar $\ast$ \hyperlink{ms_8cpp_aa65ad2ef8d04df108ecdf3324a664c7f}{Mean\+Shift} (uchar $\ast$image, uchar $\ast$filtered\+\_\+luv, int $\ast$$\ast$labels, int width, int height, int spatial\+\_\+radius, double color\+\_\+radius, int min\+Region, int num\+\_\+iters)
+\begin{DoxyCompactList}\small\item\em Function Mean\+Shift runs two phases of Mean shift algorithm Filter and Segment using Meanshift algorithm The main program for Meanshift Meanshift algorithm\+: First phase is image filtering. Filtered image is in L$\ast$u$\ast$v colorspace Second phase is image segmentation. \end{DoxyCompactList}\item 
+uchar $\ast$ \hyperlink{ms_8cpp_a3838214793438d3ada3662f11be936a1}{M\+S\+\_\+\+Filter} (uchar $\ast$image, int width, int height, int spatial\+\_\+radius, double color\+\_\+radius, int init\+Iters)
+\begin{DoxyCompactList}\small\item\em Function M\+S\+\_\+\+Filter filter image usign Meanshift algorithm using a circular flat kernel and color distance in L$\ast$u$\ast$v colorspace. \end{DoxyCompactList}\item 
+int \hyperlink{ms_8cpp_a20fca730748cd5586b1f86724d4a8f24}{M\+S\+\_\+\+Segment} (uchar $\ast$image, int width, int height, int $\ast$$\ast$labels, double color\+\_\+radius, int min\+Region)
+\begin{DoxyCompactList}\small\item\em Function M\+S\+\_\+\+Segment segments the image using Meanshift algorithm. \end{DoxyCompactList}\item 
+int \hyperlink{ms_8cpp_ad0123962474a1abc05771296d5c1d622}{M\+S\+\_\+\+Cluster} (uchar $\ast$image, int width, int height, int $\ast$$\ast$labels, int $\ast$mode\+Points, float $\ast$mode, double color\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em Function M\+S\+\_\+\+Cluster cluster the image using Meanshift. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for Meanshift algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Damir Demirović \href{mailto:damir.demirovic@untz.ba}{\tt damir.\+demirovic@untz.\+ba} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ms_8cpp_a1236189e7ed18bfff1ec1abc02de7737}\label{ms_8cpp_a1236189e7ed18bfff1ec1abc02de7737}} 
+\index{ms.\+cpp@{ms.\+cpp}!Add\+To\+Stack@{Add\+To\+Stack}}
+\index{Add\+To\+Stack@{Add\+To\+Stack}!ms.\+cpp@{ms.\+cpp}}
+\subsubsection{\texorpdfstring{Add\+To\+Stack()}{AddToStack()}}
+{\footnotesize\ttfamily void Add\+To\+Stack (\begin{DoxyParamCaption}\item[{std\+::stack$<$ \hyperlink{structMSPoint}{M\+S\+Point} $>$ \&}]{stack,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Function Add\+To\+Stack add point to the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & x coordinate of the point \\
+\hline
+{\em j} & y coordinate of the point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ms_8cpp_aa65ad2ef8d04df108ecdf3324a664c7f}\label{ms_8cpp_aa65ad2ef8d04df108ecdf3324a664c7f}} 
+\index{ms.\+cpp@{ms.\+cpp}!Mean\+Shift@{Mean\+Shift}}
+\index{Mean\+Shift@{Mean\+Shift}!ms.\+cpp@{ms.\+cpp}}
+\subsubsection{\texorpdfstring{Mean\+Shift()}{MeanShift()}}
+{\footnotesize\ttfamily uchar$\ast$ Mean\+Shift (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{image,  }\item[{uchar $\ast$}]{filtered\+\_\+luv,  }\item[{int $\ast$$\ast$}]{labels,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{spatial\+\_\+radius,  }\item[{double}]{color\+\_\+radius,  }\item[{int}]{min\+Region,  }\item[{int}]{num\+\_\+iters }\end{DoxyParamCaption})}
+
+
+
+Function Mean\+Shift runs two phases of Mean shift algorithm Filter and Segment using Meanshift algorithm The main program for Meanshift Meanshift algorithm\+: First phase is image filtering. Filtered image is in L$\ast$u$\ast$v colorspace Second phase is image segmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & input image for Meanshift algorithm \\
+\hline
+{\em filtered\+\_\+luv} & output image filtered with Meanshift algorithm \\
+\hline
+{\em labels} & labels \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em spatial\+\_\+radius} & spatial radius \\
+\hline
+{\em color\+\_\+radius} & range radius \\
+\hline
+{\em min\+Region} & minimal region for merging \\
+\hline
+{\em num\+\_\+iters} & initial number of iterations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+segmented image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ms_8cpp_ad0123962474a1abc05771296d5c1d622}\label{ms_8cpp_ad0123962474a1abc05771296d5c1d622}} 
+\index{ms.\+cpp@{ms.\+cpp}!M\+S\+\_\+\+Cluster@{M\+S\+\_\+\+Cluster}}
+\index{M\+S\+\_\+\+Cluster@{M\+S\+\_\+\+Cluster}!ms.\+cpp@{ms.\+cpp}}
+\subsubsection{\texorpdfstring{M\+S\+\_\+\+Cluster()}{MS\_Cluster()}}
+{\footnotesize\ttfamily int M\+S\+\_\+\+Cluster (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{image,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int $\ast$$\ast$}]{labels,  }\item[{int $\ast$}]{mode\+Points,  }\item[{float $\ast$}]{mode,  }\item[{double}]{color\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+Function M\+S\+\_\+\+Cluster cluster the image using Meanshift. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & in L$\ast$u$\ast$v colorspace, \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em labels} & contain labels \\
+\hline
+{\em mode\+Points} & data about mode points \\
+\hline
+{\em mode} & data about mode \\
+\hline
+{\em color\+\_\+radius} & range radius \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reg\+Count number of regions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ms_8cpp_a3838214793438d3ada3662f11be936a1}\label{ms_8cpp_a3838214793438d3ada3662f11be936a1}} 
+\index{ms.\+cpp@{ms.\+cpp}!M\+S\+\_\+\+Filter@{M\+S\+\_\+\+Filter}}
+\index{M\+S\+\_\+\+Filter@{M\+S\+\_\+\+Filter}!ms.\+cpp@{ms.\+cpp}}
+\subsubsection{\texorpdfstring{M\+S\+\_\+\+Filter()}{MS\_Filter()}}
+{\footnotesize\ttfamily uchar$\ast$ M\+S\+\_\+\+Filter (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{image,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{spatial\+\_\+radius,  }\item[{double}]{color\+\_\+radius,  }\item[{int}]{init\+Iters }\end{DoxyParamCaption})}
+
+
+
+Function M\+S\+\_\+\+Filter filter image usign Meanshift algorithm using a circular flat kernel and color distance in L$\ast$u$\ast$v colorspace. 
+
+Based on implementation from \href{https://imagej.nih.gov/ij/plugins/download/Mean_Shift.java}{\tt https\+://imagej.\+nih.\+gov/ij/plugins/download/\+Mean\+\_\+\+Shift.\+java}
+
+For each pixel of the image and the set ot the neighboring pixels within the specified spatial radius and color distance is determined. For this set of neighbor pixels, the new spatial center an the new color mean values are calculated. These new values will serve as the new center for the next iteration. This procedure will iterate until the spatial and color means will stop changing or the maximal number of iterations is achieved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & input image \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em spatial\+\_\+radius} & spatial radius \\
+\hline
+{\em color\+\_\+radius} & range radius \\
+\hline
+{\em init\+Iters} & initial number of iterations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+luv Meanshift filtered image in L$\ast$u$\ast$v colorspace. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ms_8cpp_a20fca730748cd5586b1f86724d4a8f24}\label{ms_8cpp_a20fca730748cd5586b1f86724d4a8f24}} 
+\index{ms.\+cpp@{ms.\+cpp}!M\+S\+\_\+\+Segment@{M\+S\+\_\+\+Segment}}
+\index{M\+S\+\_\+\+Segment@{M\+S\+\_\+\+Segment}!ms.\+cpp@{ms.\+cpp}}
+\subsubsection{\texorpdfstring{M\+S\+\_\+\+Segment()}{MS\_Segment()}}
+{\footnotesize\ttfamily int M\+S\+\_\+\+Segment (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{image,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int $\ast$$\ast$}]{labels,  }\item[{double}]{color\+\_\+radius,  }\item[{int}]{min\+Region }\end{DoxyParamCaption})}
+
+
+
+Function M\+S\+\_\+\+Segment segments the image using Meanshift algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & in L$\ast$u$\ast$v colorspace, \\
+\hline
+{\em width} & width of the image \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em labels} & contain labels \\
+\hline
+{\em color\+\_\+radius} & range radius \\
+\hline
+{\em min\+Region} & minimal region for merging \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reg\+Count Number of segmented regions 
+\end{DoxyReturn}
