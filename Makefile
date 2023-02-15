@@ -11,8 +11,9 @@ CC = g++
 
 
 
-all: $(BIN)/$(EXECUTABLENAME)  $(BIN)/$(EXECUTABLENAMEFILTER)
+all: $(BIN) $(BIN)/$(EXECUTABLENAME)  $(BIN)/$(EXECUTABLENAMEFILTER)
 
+	
 $(BIN)/$(EXECUTABLENAME): src/meanshift.o $(MSSRC)/ms.o  $(RASRC)/raList.o $(IMGSRC)/image.o $(IOSRC)/io_png.o $(RASRC)/TransitiveClosure.o  
 	$(CC) $(CFLAGS) src/meanshift.o  $(RASRC)/raList.o $(RASRC)/TransitiveClosure.o $(IOSRC)/io_png.o $(IMGSRC)/image.o $(MSSRC)/ms.o -o bin/$(EXECUTABLENAME) $(LIBS)
 	
@@ -40,7 +41,9 @@ $(IMGSRC)/image.o: $(IMGSRC)/image.cpp $(IMGSRC)/image.h
 $(IOSRC)/io_png.o: $(IOSRC)/ $(IOSRC)/io_png.c $(IOSRC)/io_png.h
 	$(CC) $(CFLAGS)  -c $(IOSRC)/io_png.c -o$(IOSRC)/io_png.o
 
+$(BIN):
+	mkdir $(BIN)
 	
 .PHONY: clean
 clean:
-	rm src/msfilter.o src/meanshift.o $(MSSRC)/*.o $(RASRC)/*.o $(IOSRC)/*.o $(IMGSRC)/*.o bin/$(EXECUTABLENAME) bin/$(EXECUTABLENAMEFILTER)
+	rm src/msfilter.o src/meanshift.o -rv $(BIN) $(MSSRC)/*.o $(RASRC)/*.o $(IOSRC)/*.o $(IMGSRC)/*.o bin/$(EXECUTABLENAME) bin/$(EXECUTABLENAMEFILTER)
